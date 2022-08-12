@@ -9,4 +9,6 @@ var func class in this languge nothing differs in nature.
 
 # decleration:
   ## as var:
-  
+  varible = 1
+  varible = "string"
+  varible: int 
