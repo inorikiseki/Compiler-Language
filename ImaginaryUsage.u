@@ -1,0 +1,110 @@
+Character:
+	speed:20.float
+	health:10.int
+	gun:Gun
+  attak:player.str.print "attack",//may write as attack.str
+		gun.shoot 10.Bullet,
+    self
+	walk:player.str.print "walk",
+		self
+	 //paralell without ,must be point several of the options
+	 //serialize with ,
+Bullet:
+	print "bullet"
+	
+Gun:
+	bullets.shoot:
+		print "shoot ",bullets
+		
+player:
+	Character.
+	Artist.
+	
+#player.walk=walk player
+//the front of . both mark and arg 
+Main:
+	player.attack.wait 1.second .walk
+	//or may write as 
+	//player.attack,walk
+	//player::attack::wait
+	
+	
+#Here is a problem 
+Player:
+	health:20
+	pet:
+		health:15
+		
+//::call the unit's own sub unit
+//.call the unit's returned unit's sub unit
+Player::pet::health//15
+Player::pet.health//20
+
+#detail in return 
+//by default return the root unit
+Root:
+	print: io::print "root"
+	trunk:
+		print: io::print "truck"
+		twig:
+			print: io::print "twig"
+
+Root::trunk::twig::print //twig,return io
+Root::trunk::twig.print //->io.print error io.print need arg
+
+#Change a little
+Root:
+	print: io::print "root"
+	trunk:
+		print: io::print "truck",self//or using name trunk
+		twig:
+			print: io::print "twig",root//or using name Root
+
+Root::trunk::twig.trunk::twig.truck
+
+
+#variable
+Player:
+	credit:0.int
+	health:10.int
+	pick_coin:credit.add 1
+	take_damage:health-1
+	
+hero:player.new
+//two types node 
+//root if use . call the sub unit
+//else if use . pass as arg 
+hero.health.if.equals 10 .pick_coin
+//or like:
+//double character arg , the hero is both if and equal 's arg 
+//or make a subject(hero) in the sentence:
+//subject:the first used unit
+//object:the second and so on
+//verb:take subject and object
+//subject.verb object mode
+//conj: take a verb:bool and hold the subject
+//adverse: 
+//pronoun:hold the subject followed or object it,his:subject her:object
+
+if hero.health.equal 10 .it.pick_coin.and.take_damage //how can this work, let's work it out
+//if ->if (**):hero.health(the subject's sub unit)
+
+//hero.health.equal 10 -> equal(hero.health,10):bool
+//if(equal(hero.health,10):bool):hero.pick_coin:hero.and:hero.take damage
+the player add one health
+//imperative body
+.else if hero.credit.less_than 20 .it.multiple_by 10// it:subject
+while hero.health.not_equal its.credit 
+.the.health.add 1 .and the.credit.minus 1
+
+#It's like an essay
+#Try make it like this
+#Another implement
+
+If hero's health equal(s) 10, it pick coin and take damage
+else if hero credit less_than 20, it multiple by 10
+
+while hero's health don't equal its credit,
+the health add 1 and the credit minus 1
+
+#more
