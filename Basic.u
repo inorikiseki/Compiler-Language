@@ -1,0 +1,33 @@
+#a unit declaring with ':',if no name, just keep ':'
+basic:
+  //implement by hardware
+  //if based on C
+  //const function returns the sub unit by 'number'
+  //This may be a group of units
+int:
+  //implement by hardware
+  //receive a const and warp it as an integer
+bool:
+	//wrap it as a boolean type
+	global //a unit play as keyword
+		false:0,true:1
+		value.not:
+			value= true .not 
+	//global keyword make it call called directly from out side.
+	//otherwise it can only wirte as 'bool.true' not 'true'
+	
+#override for better to use
+#calling
+false=bool.false=bool.0=0
+true=bool.true=bool.1=1
+
+char:
+	a:'a',b:'b',c:'c',d:'d'//...
+char.a='a'
+string:
+	chars:
+		char,chars
+not:
+	1,0
+	
+not true=true.not
