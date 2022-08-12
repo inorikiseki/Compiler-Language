@@ -18,13 +18,31 @@ Bad English.
   the declarations are just a name to mark. everything can be anonymous. name are just mark for using. 
   name do not affect any functionality and the syntax conception.
   ## as var style:
-  varible: int = 1 //typed and asigned
-  varible: = 1  
-  varible: = "string" //typed implicitly and asigned
-  varible: int //typed but not asigned
-  varible: //not asigned and not typed
-  
- 
+  one:
+    1.int
+    //int is acctully a functional unit, it receive 1  as arg and has the integer behaviour.
+    //also 1 is unit,too. But may be implement by trick.
+    //Thus makes this varible has the value 1 as integer
+   //varible is just a name.
+   //you may not need to declare.
+   // the '1' it self is just a unit with less imperative meaning if not work with int,string,bool and so on
+   // the '1' itself can ,when work with other unit, be used to get the unit's first sub unit.
+   //int's all sub units is all intergers 2^n, n is the bits
+   true:
+    true.bool
+    //this overrides true but has no meaning, cuz it has the same functionality
+    //bool's all sub note is two:
+    //fisrt:
+      'true'
+     //second:
+     // 'false'
+     //actually true is  1,false is 0
+     //false:s
+        0
+     // true:
+          1
+     
+   varible:
   ## as func style:
   function arg1,arg2:return_type:
     scope
