@@ -1,0 +1,52 @@
+# varing node&const node
+node_info:
+  lrags.node rargs:
+    component1
+    component2
+    //..
+    sub_node1:
+    sub_node2: //sub_node1 sub_node2:parallel relation
+    ,sub_node3: //sub_node2,sub_node3:serial relation
+    //now there are two inner node
+    //..
+basic node://may be implemented via simulation
+#varing type:
+  int, char, bool, float
+  var, str
+  vec2,vec3,vec4,
+  mat2,mat3,mat4
+#flow type:
+  if,else(,elif),while,for,match,break,continue
+#setget flow:
+player:
+  walker
+  artist
+  health:
+    10.int
+    .set:
+      io.print "health set",health:larg
+    .get:
+      health
+    //.node cannot be changed in runtime, always keep
+    //call automatically 
+    //private
+   
+walker:
+  step:
+    5.int
+  walk:
+    io.print "walk" .step.str.print
+
+artist:
+  draw:
+    io.print "draw"
+  erase:
+    io.print "erase"
+  
+player.health:12.int.str.io.print
+
+player.walk
+player.step:10 .walk
+player.draw
+player.erase
+  
