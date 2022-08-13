@@ -1,0 +1,22 @@
+User:
+	account:
+		"admin"
+	password:
+		"123456"
+	loign:
+		account.System.exist? 
+		.match file.getpwd account,password?
+		.print "Login succeed!" .true
+		,print "Login failed." .false
+System:
+	account.exist?:
+		file.find account .branch true,false
+Order:
+	user:
+	time:
+		system.time.print.with "!"
+	
+Main:
+	user:User.new
+	user.account:"new_user" .password:"888888" .login
+	Order.user:user .user.account.print
