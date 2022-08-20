@@ -1,0 +1,68 @@
+instruction is function.
+data is function.
+turing = lambda
+
+# and or not(one of the understanding)
+and:  00->0 01->0 10->0 11->1 ...two info -> one info,loss
+or: 00->0 01->1 10->1 11->1   ...two info -> one info,loss
+not: 0->1  1->0 ...no info loss
+...there are some overlap
+00->0 11->1 are in both 'and' and 'or'
+
+thus only eight:a, o, n, ao are functions
+func in in ->out
+a01->0 
+a10->0
+o01->1
+o10->1
+
+a|o00->0
+a|o11->1
+
+n1->0
+n0->1
+
+and or not are functions.
+changed a litte: as 1+1=2 2-1=1 as this 加减就是函数,函数就是映射
+out in in ->reverse func
+001->a
+010->a
+101->o
+110->o
+000->ao
+111->ao
+01->n
+00->n
+the count of how many func is not important
+encode:
+000->ao->0
+001->a->0
+010->a->0
+011->n->0
+100->n
+101->o->00
+110->o
+111->ao
+
+thus as reverse function.
+001=010
+101=110
+000=111
+011=100
+
+the nature of func is mapping.no need to know how it's mapped
+no matter how you view this,as long as there are enough basic function
+you are able to describe everything.
+info amount either shrink or keep.
+
+# break that view
+function input1 input2 ->output  0,1 are two different function
+
+000-0
+001-0
+010-0
+011-1
+100-0
+101-1
+110-1
+111-1
